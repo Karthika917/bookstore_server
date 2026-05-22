@@ -1,0 +1,72 @@
+
+nodemon
+--------
+nodemon is a tool that helps develop Node.js based applications by automatically restarting the node
+ application when file changes in the directory are detected.
+To install nodemon - npm i -g nodemon
+
+-Middleware : special function that can be act on requests before it hit the server.
+Because of this for purposes like security check, data conversion etc.
+- middleware is a function that has access to the request object (req), the response
+object (res), and the next middleware function in the application's request-response 
+cycle. It acts as an intermediary layer, processing incoming requests before they 
+reach the final route handler and outgoing responses before they are sent to the
+client.
+->built-in middlewares : json,cors etc.
+->user-defined middleware
+1.create a folder
+2.create a middleware module
+3.define the function with parameters - req,res,next
+
+Types of middlewares:
+1.Application middleware : works over entire app. It will be configured with app instance
+  eg:cors,json etc.
+2.Router specific middlewares : works on a specific route which it configured
+
+Enviornment Variables
+-----------------------
+-Variables which have value where they are only available/accessible in runtime.
+-environment variables are defined in .env files
+-It is accessed by using process object[Global object of Node.js]
+-to access environmnent variables using process object we need dotenv package also.
+
+MongoDB Integration
+-------------------
+-Creating project DB
+-Create a account in MongoDb accounts/atlas
+-Login to your account
+-Create a new project
+-Create a new cluster -> Deploy cluster ->[optional]Create db user
+-Create database
+-create a collection[user]->add sample data
+
+
+
+=>Models(Mongoose Models)
+-------------------------
+-Mongoose model is a class compiled from a 
+
+CORS(Cross-Origin Resource Sharing)
+--------------------------------------
+a browser-based security mechanism that uses HTTP headers to allow web applications at one
+domain (origin) to access resources from a different domain.
+-uses middleware provided by cors package.
+-To install - npm i cors
+-app.use(cors()) : to configure cors in server
+
+=>JWT(Json Web Token)
+----------------------
+-Its an authentication mechanism used to provide user with more secure access.
+-creates a random character string while authenticate, and user specific requests uses
+ that string for further role based access requests.
+-uses 'jsonwebtoken package with node.js
+   npm i jsonwebtoken
+
+-jsonwebtoken-> sign() : method used for creating a Token
+     sign({payload,secretKey})
+     payload: a piece of data that differentiate a user's Token
+     secretKey:a constant value used in token generation and verification
+
+
+Multer middleware
+------------------
