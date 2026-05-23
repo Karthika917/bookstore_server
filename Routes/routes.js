@@ -7,6 +7,7 @@ const jwtmiddle = require('../Middleware/jwtMiddleware')
 const multerConfig = require('../Middleware/multerMiddleware')
 const adminjwtmiddle = require('../Middleware/adminJwtMiddleware')
 const pdfmulterConfig = require('../Middleware/pdfMulterMiddleware')
+const contactController = require('../Controllers/contactController')
 
 const router = express.Router()  // Create a separate route handler to organize API endpoints cleanly.
 
@@ -52,6 +53,9 @@ router.get('/list-jobpost',jwtmiddle,jobController.listJobPost)
 
 //purchasebook Stripe
 router.post('/purchase-book',jwtmiddle,bookController.purchaseBookStripe)
+
+//contact
+router.post('/contact',contactController.sendMessage)
 
 //ADMIN
 router.get('/admin/get-books',adminjwtmiddle,bookController.getAdminAllBooks)
